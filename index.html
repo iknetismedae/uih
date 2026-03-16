@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 480px;
+      overflow: hidden;
+    }
+
+    /* Cover / banner */
+    .profile-cover {
+      height: 140px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    /* Main content */
+    .profile-body {
+      padding: 0 28px 28px;
+    }
+
+    /* Avatar */
+    .avatar-wrap {
+      position: relative;
+      margin-top: -48px;
+      margin-bottom: 12px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    }
+
+    .avatar-initials {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      user-select: none;
+    }
+
+    /* Name & handle */
+    .profile-name {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1a1a2e;
+    }
+
+    .profile-handle {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    /* Bio */
+    .profile-bio {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin-top: 12px;
+    }
+
+    /* Meta (location, website) */
+    .profile-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .meta-item a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .meta-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Stats */
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #e5e7eb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background: #f9fafb;
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Action buttons */
+    .profile-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      background: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="profile-cover"></div>
+
+    <div class="profile-body">
+      <div class="avatar-wrap">
+        <div class="avatar-initials" aria-label="User avatar">AJ</div>
+      </div>
+
+      <h1 class="profile-name">Alex Johnson</h1>
+      <p class="profile-handle">@alexjohnson</p>
+
+      <p class="profile-bio">
+        Full-stack developer passionate about building great user experiences.
+        Open-source contributor &amp; coffee enthusiast. ☕
+      </p>
+
+      <div class="profile-meta">
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          San Francisco, CA
+        </span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <a href="https://alexjohnson.dev" target="_blank" rel="noopener noreferrer">alexjohnson.dev</a>
+        </span>
+      </div>
+
+      <div class="profile-stats" role="list" aria-label="Profile statistics">
+        <div class="stat" role="listitem">
+          <div class="stat-value">248</div>
+          <div class="stat-label">Posts</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat-value">12.4k</div>
+          <div class="stat-label">Followers</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat-value">391</div>
+          <div class="stat-label">Following</div>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <button class="btn btn-primary" type="button">Follow</button>
+        <button class="btn btn-secondary" type="button">Message</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
