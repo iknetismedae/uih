@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #1c1e21;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      max-width: 420px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .profile-banner {
+      height: 140px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -56px;
+      padding: 0 1.5rem;
+    }
+
+    .profile-avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      background-color: #e4e6eb;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      margin-top: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .profile-handle {
+      color: #65676b;
+      font-size: 0.9rem;
+      margin-top: 0.15rem;
+    }
+
+    .profile-bio {
+      text-align: center;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      padding: 0.75rem 1.5rem 0;
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #65676b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border: 1px solid #e4e6eb;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #1c1e21;
+      font-size: 0.9rem;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .profile-link:hover {
+      background-color: #f0f2f5;
+      border-color: #ccc;
+    }
+
+    .profile-link svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: #65676b;
+    }
+  </style>
+</head>
+<body>
+  <main class="profile-card">
+    <div class="profile-banner"></div>
+
+    <div class="profile-header">
+      <img
+        class="profile-avatar"
+        src="https://i.pravatar.cc/224"
+        alt="User avatar"
+      />
+      <h1 class="profile-name">Alex Johnson</h1>
+      <p class="profile-handle">@alexjohnson</p>
+    </div>
+
+    <p class="profile-bio">
+      Full-stack developer &amp; open-source enthusiast. Building things that
+      make the web a better place.
+    </p>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <div class="stat-value">128</div>
+        <div class="stat-label">Posts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">4.2k</div>
+        <div class="stat-label">Followers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">312</div>
+        <div class="stat-label">Following</div>
+      </div>
+    </div>
+
+    <nav class="profile-links">
+      <a class="profile-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.43 9.64 8.21 11.21.6.11.82-.26.82-.57v-2.01c-3.34.72-4.04-1.61-4.04-1.61-.55-1.37-1.33-1.74-1.33-1.74-1.09-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.21.69.82.57C20.57 21.93 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a class="profile-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.95 4.57a10 10 0 0 1-2.83.77 4.96 4.96 0 0 0 2.17-2.72c-.95.56-2 .96-3.13 1.18a4.92 4.92 0 0 0-8.39 4.49A13.94 13.94 0 0 1 1.64 3.16a4.93 4.93 0 0 0 1.52 6.57 4.9 4.9 0 0 1-2.23-.61v.06a4.93 4.93 0 0 0 3.95 4.83 4.94 4.94 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.87 9.87 0 0 1 0 19.54a13.94 13.94 0 0 0 7.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10 10 0 0 0 24 4.59l-.05-.02z"/></svg>
+        Twitter
+      </a>
+      <a class="profile-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54A1.75 1.75 0 0 0 1.77 24h20.45A1.75 1.75 0 0 0 24 22.27V1.73A1.75 1.75 0 0 0 22.22 0z"/></svg>
+        LinkedIn
+      </a>
+      <a class="profile-link" href="mailto:alex@example.com">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        alex@example.com
+      </a>
+    </nav>
+  </main>
+</body>
+</html>
